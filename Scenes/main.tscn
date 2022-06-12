@@ -1,0 +1,387 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Icons/back5_89382.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/new_dynamicfont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scripts/main.gd" type="Script" id=3]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.0705882, 0.0588235, 0.27451, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("anim_save:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 536.5, -50 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "save"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("anim_save:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 536.5, -50 ), Vector2( 536.5, 30 ), Vector2( 536.5, 30 ), Vector2( 536.5, -50 ) ]
+}
+
+[node name="main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0705882, 0.0588235, 0.27451, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="work_place" type="VBoxContainer" parent="."]
+anchor_left = 0.0078125
+anchor_top = 0.0138889
+anchor_right = 0.992188
+anchor_bottom = 0.986111
+rect_min_size = Vector2( 1260, 700 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="header" type="Control" parent="work_place"]
+margin_right = 1260.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 1260, 40 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="work_place/header"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.109804, 0.0901961, 0.454902, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="back" type="Button" parent="work_place/header"]
+margin_right = 42.0
+margin_bottom = 40.0
+icon = ExtResource( 1 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="name_pos" type="Label" parent="work_place/header"]
+anchor_left = 0.240873
+anchor_top = 0.1875
+anchor_right = 0.759127
+anchor_bottom = 0.8125
+text = "Проекты"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": true
+}
+
+[node name="save" type="ColorRect" parent="work_place/header"]
+anchor_left = 0.93254
+anchor_top = 0.0875
+anchor_right = 0.996825
+anchor_bottom = 0.9125
+color = Color( 0.101961, 0.0901961, 0.305882, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": true
+}
+
+[node name="save" type="Button" parent="work_place/header/save"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Save"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="add" type="ColorRect" parent="work_place/header"]
+anchor_left = 0.865079
+anchor_top = 0.1
+anchor_right = 0.929365
+anchor_bottom = 0.925
+color = Color( 0.101961, 0.0901961, 0.305882, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": true
+}
+
+[node name="add" type="Button" parent="work_place/header/add"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "add"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="body" type="Control" parent="work_place"]
+margin_top = 44.0
+margin_right = 1260.0
+margin_bottom = 694.0
+rect_min_size = Vector2( 1260, 650 )
+
+[node name="ColorRect" type="ColorRect" parent="work_place/body"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.109804, 0.0901961, 0.454902, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="work_place/body"]
+anchor_left = 0.0238095
+anchor_top = 0.0307692
+anchor_right = 0.97619
+anchor_bottom = 0.969231
+margin_right = 2.0
+rect_min_size = Vector2( 1200, 610 )
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="work_place/body/ScrollContainer"]
+margin_right = 1202.0
+margin_bottom = 610.0
+rect_min_size = Vector2( 1190, 100 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Popup" type="Popup" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -180.5
+margin_top = -130.0
+margin_right = 180.5
+margin_bottom = 130.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0705882, 0.0588235, 0.27451, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="np" type="Label" parent="Popup"]
+anchor_left = 0.0290859
+anchor_top = 0.0538462
+anchor_right = 0.439058
+anchor_bottom = 0.142308
+text = "Дайте имя проекту"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="LineEdit" type="LineEdit" parent="Popup"]
+anchor_left = 0.033241
+anchor_top = 0.176923
+anchor_right = 0.972299
+anchor_bottom = 0.303846
+text = "Новый проект"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="pp" type="Label" parent="Popup"]
+anchor_left = 0.031856
+anchor_top = 0.376923
+anchor_right = 0.585873
+anchor_bottom = 0.465385
+margin_right = -160.0
+text = "Дайте приоритет проекту"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="SpinBox" type="SpinBox" parent="Popup"]
+anchor_left = 0.0443213
+anchor_top = 0.519231
+anchor_right = 0.598338
+anchor_bottom = 0.646154
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="pop_add" type="Button" parent="Popup"]
+anchor_left = 0.0415512
+anchor_top = 0.726923
+anchor_right = 0.412742
+anchor_bottom = 0.838462
+text = "add"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Popup_task" type="Popup" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -182.0
+margin_top = -178.0
+margin_right = 228.0
+margin_bottom = 276.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Popup_task"]
+anchor_left = -0.0243902
+anchor_right = 1.03171
+anchor_bottom = 1.09
+color = Color( 0.0705882, 0.0588235, 0.27451, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="nm" type="Label" parent="Popup_task"]
+anchor_left = -0.0108108
+anchor_top = 0.0216216
+anchor_right = 0.359459
+anchor_bottom = 0.0837838
+text = "Дайте имя задаче"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="nm_edit" type="LineEdit" parent="Popup_task"]
+anchor_left = -0.00540541
+anchor_top = 0.105405
+anchor_right = 0.978378
+anchor_bottom = 0.194595
+text = "Новая задача"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="pr" type="Label" parent="Popup_task"]
+anchor_left = -0.00540541
+anchor_top = 0.237838
+anchor_right = 0.505405
+anchor_bottom = 0.3
+margin_right = -149.0
+margin_bottom = -7.62939e-06
+text = "Дайте приоритет задаче"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="SpinBox" type="SpinBox" parent="Popup_task"]
+anchor_left = -0.0027027
+anchor_top = 0.335135
+anchor_right = 0.508108
+anchor_bottom = 0.424324
+margin_right = 1.52588e-05
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="desc" type="Label" parent="Popup_task"]
+anchor_left = 0.0027027
+anchor_top = 0.448649
+anchor_right = 0.224324
+anchor_bottom = 0.510811
+margin_right = -42.0
+text = "Описание:"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TextEdit" type="TextEdit" parent="Popup_task"]
+anchor_top = 0.528634
+anchor_right = 1.00244
+anchor_bottom = 0.845815
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="add_task" type="Button" parent="Popup_task"]
+anchor_left = 0.00731707
+anchor_top = 0.874449
+anchor_right = 0.341463
+anchor_bottom = 0.938326
+text = "Добавить задачу"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="anim_save" type="Panel" parent="."]
+anchor_left = 0.419141
+anchor_top = -0.0694444
+anchor_right = 0.580859
+anchor_bottom = -0.0138889
+margin_top = 3.8147e-06
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="anim_save"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -47.0
+margin_top = -11.5
+margin_right = 47.0
+margin_bottom = 11.5
+text = "Сохраненно!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 3 )
+anims/save = SubResource( 4 )
+
+[connection signal="pressed" from="work_place/header/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="work_place/header/save/save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="work_place/header/add/add" to="." method="_on_add_pressed"]
+[connection signal="pressed" from="Popup/pop_add" to="." method="_on_pop_add_pressed"]
+[connection signal="pressed" from="Popup_task/add_task" to="." method="_on_add_task_pressed"]
